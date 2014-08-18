@@ -1,0 +1,56 @@
+#compare {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #fff
+}
+
+table {
+    border-collapse: collapse
+}
+
+tr.even {
+    background: #f5f7f7
+}
+
+tr.onhover {
+    background: #fff4c5
+}
+
+th {
+    font-size: 16px;
+    padding: 20px 0 15px
+}
+
+td {
+    line-height: 40px
+}
+
+td.yes {
+    background: url(../images/yes.gif) center no-repeat
+}
+
+td.no {
+    background: url(../images/no.gif) center no-repeat
+}
+
+tr.top {
+    border-bottom: 5px solid #8cc63f;
+    background: #fff
+}
+
+td h3 {
+    padding: 0 0 0 30px
+}
+
+h1 {
+    color: #666;
+    line-height: 50px;
+    font-size: 26px
+}
+
+h1 span {
+    font-size: 16px;
+    padding-left: 10px;
+    color: #aaa
+}
