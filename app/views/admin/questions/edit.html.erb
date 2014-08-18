@@ -1,0 +1,82 @@
+<script>
+    <% if flash[:error_msg]%>
+    alert('<%=flash[:error_msg]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_questions_path %>">问答管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      问答修改
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable ui-sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title="">
+      <h2><i class="icon-edit"></i> 问答修改</h2>
+    </div>
+    <div class="box-content">
+      <%= form_for :question, :url => admin_question_path, :method => "put", :html => {:id => "verifytitle", :class => "form-horizontal"} do |f| %>
+          <legend>问答修改</legend>
+          <%= f.label "问题：" %>
+          <%= f.text_field :title %>
+          <br/>
+          <%= f.label "解答：" %>
+          <%= f.cktext_area :description %>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">完成提交</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!--/span-->
+</div>
+<script src="/admin/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#verifytitle").validate({
+                rules: {
+                    "question[title]": {
+                        required: true
+                    },
+                    "question[description]": {
+                        required: true
+                    }
+                },
+                messages: {
+                    "question[title]": {
+                        required: "请填写标题"
+                    },
+                    "question[description]": {
+                        required: "请填写内容"
+                    }
+                },
+                errorClass: "error",
+                highlight: function (element, errorClass) {
+                    $(element).parent().parent().addClass(errorClass);
+                },
+                unhighlight: function (element, errorClass) {
+                    $(element).parent().parent().removeClass(errorClass);
+                },
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.parent());
+                },
+                errorElement: "span"
+            });
+        });
+    });
+    $(document).ready(function () {
+        $('form[data-remote]').bind('ajax:before', function () {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>
