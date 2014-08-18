@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613100042) do
+ActiveRecord::Schema.define(version: 20140818165803) do
 
-  create_table "cases", force: true do |t|
+  create_table "announcements", force: true do |t|
     t.string   "title"
-    t.string   "content"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,24 +35,48 @@ ActiveRecord::Schema.define(version: 20140613100042) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
-  create_table "journalisms", force: true do |t|
+  create_table "gangaos", force: true do |t|
     t.string   "title"
+    t.integer  "price"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
     t.text     "description"
+    t.text     "xingcheng"
+    t.text     "feiyongshuoming"
+    t.text     "wenxintishi"
+    t.text     "yudingtishi"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "mains", force: true do |t|
+  create_table "members", force: true do |t|
     t.string   "name"
-    t.string   "tel"
-    t.string   "address"
+    t.string   "mobile"
+    t.string   "email"
+    t.string   "passwd"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "questions", force: true do |t|
+  create_table "visas", force: true do |t|
     t.string   "title"
+    t.integer  "price"
+    t.string   "bianhao"
+    t.string   "leixing"
+    t.string   "banlishijian"
+    t.string   "mianshi"
+    t.string   "youxiaoqi"
+    t.string   "rujingcishu"
+    t.string   "zuichangshijian"
+    t.text     "shoukefanwei"
     t.text     "description"
+    t.integer  "question_category_id", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

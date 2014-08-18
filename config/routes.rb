@@ -1,5 +1,30 @@
 Weixin::Application.routes.draw do
-  get "main/index"
+  mount Ckeditor::Engine => '/ckeditor'
+  root :to => "main#index"
+  # admin
+  namespace :admin do
+    match '' => 'accounts#index', :via => :get
+    match '/login' => 'main#login', :via => :get
+    match '/logout' => 'main#logout', :via => :get
+    resources :main do
+      collection do
+        post 'check_login'
+      end
+    end
+    # 会员管理
+    resources :accounts do
+      collection do
+        post 'update_multiple'
+      end
+    end
+    # 最新公告
+    resources :announcements
+    # 签证
+    resources :visas
+    # 港澳旅游
+    resources :gangaos
+
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
