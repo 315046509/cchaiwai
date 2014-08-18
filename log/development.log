@@ -6157,3 +6157,50 @@ Started GET "/assets/ckeditor/contents.css?t=E0LB" for 127.0.0.1 at 2014-08-18 2
 
 
 Started GET "/assets/ckeditor/contents.css?t=E0LB" for 127.0.0.1 at 2014-08-18 22:10:36 +0800
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+Processing by Admin::AccountsController#index as HTML
+  [1m[35mMember Load (0.6ms)[0m  SELECT `members`.* FROM `members` ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `members`[0m
+  Rendered admin/accounts/index.html.erb within layouts/admin (7.5ms)
+Completed 200 OK in 22ms (Views: 13.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/admin/announcements.css?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/admin/visas.css?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/admin/gangaos.css?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/admin/announcements.js?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/admin/gangaos.js?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/admin/visas.js?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
+
+
+Started GET "/assets/ckeditor/ckeditor.js" for 127.0.0.1 at 2014-08-18 23:17:14 +0800
